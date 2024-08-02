@@ -6,7 +6,7 @@ use App\Http\Controllers\Users\UsersController;
 use App\Http\Controllers\StudentRegistrationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LessonsController;
-
+use App\Http\Controllers\SessionsController;
 Route::prefix('auth')->group(function(){
     Route::post('signup',[AuthController::class,'signup']);
     Route::post('login',[AuthController::class,'login']);
@@ -25,3 +25,4 @@ Route::resource('StudentReg',StudentRegistrationController::class)->middleware('
 
 Route::resource('lessons',LessonsController ::class)->middleware('auth:sanctum');
 
+Route::resource('Session',SessionsController ::class)->middleware('auth:sanctum');
