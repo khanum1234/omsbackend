@@ -61,4 +61,11 @@ class User extends Authenticatable
     public function StudentRegistration(){
         return $this->belongsto(StudentRegistration::class);
     }
+    public function Lessons(){
+        return $this->belongsToMany(Lessons::class);
+    }
+    public function attendances()
+{
+    return $this->hasMany(Attendances::class);
+}
 }
